@@ -4,7 +4,6 @@
 typedef struct{
 	int num_parada;
 	int num_ciudad_parada;
-
 } parada;
 
 void crearParada(parada &p);
