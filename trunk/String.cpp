@@ -98,38 +98,38 @@ void print(string s)
     }
 }
 
-boolean strmen(string s1,string s2)
+bool strmen(string s1,string s2)
 {
     int i=0;
-    boolean encontre = FALSE;
-    boolean menor = FALSE;
+    bool encontre = false;
+    bool menor = false;
     while ((!encontre) && (s1[i]!='\0') && (s2[i]!='\0'))
     {
         if (s1[i]!=s2[i])
         {
-            encontre = TRUE;
+            encontre = true;
             if (s1[i]<s2[i])
-                menor = TRUE;
+                menor = true;
         }
         i++;
     }
     if ((!encontre) && (s2[i]!='\0'))
-        menor = TRUE;
+        menor = true;
     return menor;
 }
 
-boolean streq(string s1,string s2)
+bool streq(string s1,string s2)
 {
     int i=0;
-    boolean iguales = TRUE;
+    bool iguales = true;
     while (iguales && (s1[i]!='\0') && (s2[i]!='\0'))
     {
         if (s1[i]!=s2[i])
-        iguales = FALSE;
+        iguales = false;
         i++;
     }
     if ((s1[i]!='\0') || (s2[i]!='\0'))
-        iguales = FALSE;
+        iguales = false;
     return iguales;
 }
 
