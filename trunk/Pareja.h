@@ -7,13 +7,23 @@ typedef struct{
 	string nombre_ciudad;
 } pareja;
 
-void crearPareja(pareja &p);
-void cargarPareja(pareja &p);
-void borrarPareja(pareja &p);
-void mostrarPareja(pareja p);
-int darNum_ciudad(pareja p);
-string darNombre_ciudad(pareja p);
-void setNum_ciudad(pareja &p, int numero);
-void setNombre_ciudad(pareja &p, string nombre);
 
+//Permite cargar una pareja desde teclado
+void cargarPareja(pareja &p);
+
+//selectora de numero de ciudad
+int darNum_ciudad(pareja p);
+
+//selectora de nombre de la ciudad
+void DarNombreCiudad(pareja p, string &nombreCiudad);
+
+//Permite mostrar una pareja en consola
+void mostrarPareja(pareja p);
+
+
+//string darNombre_ciudad(pareja p);
+//void setNum_ciudad(pareja &p, int numero);
+//void setNombre_ciudad(pareja &p, string nombre);
+//void cargarPareja(pareja &p);
+//void borrarPareja(pareja &p);
 #endif // PAREJA_H_INCLUDED
