@@ -1,6 +1,6 @@
 #ifndef STRING_H_INCLUDED
 #define STRING_H_INCLUDED
-#include "Boolean.h"
+#include <stdio.h>
 
 const int MAX=80;
 typedef char *string;
@@ -30,10 +30,10 @@ void strswp(string &s1, string &s2);
 void print(string s);
 
 //recibe dos strings y devuelve TRUE si el primero de ellos es menor (en orden alfabético) que el segundo, o FALSE en caso contrario.
-boolean strmen(string s1,string s2);
+bool strmen(string s1,string s2);
 
 //reciba dos strings y devuelve TRUE si ambos strings son iguales o FALSE en caso contrario.
-boolean streq(string s1,string s2);
+bool streq(string s1,string s2);
 
 //persiste en disco, el contenido del string s.
 //PRECONDICION: Puntero a file debe venir abierto para escritura
