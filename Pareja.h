@@ -12,18 +12,18 @@ typedef struct{
 void cargarPareja(pareja &p);
 
 //selectora de numero de ciudad
-int darNum_ciudad(pareja p);
+int darNumCiudad(pareja p);
 
 //selectora de nombre de la ciudad
-void DarNombreCiudad(pareja p, string &nombreCiudad);
+void darNombreCiudad(pareja p, string &nombreCiudad);
 
 //Permite mostrar una pareja en consola
-void mostrarPareja(pareja p);
+void desplegarPareja(pareja p);
 
+//dice si dos parejas son iguales
+bool igualesPareja(pareja p1, pareja p2);
 
-//string darNombre_ciudad(pareja p);
-//void setNum_ciudad(pareja &p, int numero);
-//void setNombre_ciudad(pareja &p, string nombre);
-//void cargarPareja(pareja &p);
-//void borrarPareja(pareja &p);
+//dice si la primer pareja es mayor que la segunda
+bool mayorPareja(pareja p1, pareja p2);
+
 #endif // PAREJA_H_INCLUDED
