@@ -26,7 +26,10 @@ bool igualesPareja(pareja p1, pareja p2);
 //dice si la primer pareja es mayor que la segunda
 bool mayorPareja(pareja p1, pareja p2);
 
-//setea el nombre de la ciudad
-void setNombreCiudad(pareja &p, string nombre);
+//dada una pareja y un nombre de ciudad dice si son iguales
+bool igualNombreCiudad(pareja p, string c);
+
+//dada una pareja y un nombre dice si la primera es mayor que la segunda
+bool mayorNombreCiudad(pareja p, string c);
 
 #endif // PAREJA_H_INCLUDED
