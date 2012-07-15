@@ -50,8 +50,16 @@ bool mayorPareja(pareja p1, pareja p2)
     return strmen(nomb_ciudad2, nomb_ciudad1);
 }
 
-void setNombreCiudad(pareja &p, string nombre)
+bool igualNombreCiudad(pareja p, string c)
 {
-    strcop(p.nombre_ciudad,nombre);
+    string aux;
+    darNombreCiudad(p, aux);
+    return streq(aux, c);
 }
 
+bool mayorNombreCiudad(pareja p, string c)
+{
+    string aux;
+    darNombreCiudad(p, aux);
+    return strmen(c, aux);
+}
