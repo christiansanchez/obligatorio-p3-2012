@@ -92,18 +92,6 @@ void desplegarCiudades(ciudades c)
     }
 }
 
-pareja Find(ciudades abb, int num_ciudad)
-{
-    if(darNum_ciudad(abb->info_pareja) == num_ciudad){
-        return abb->info_pareja;
-    }else if(darNum_ciudad(abb->info_pareja) < num_ciudad){
-        return Find(abb->Hder, num_ciudad);
-    }else{
-        return Find(abb->Hizq, num_ciudad);
-    }
-
-}
-
 pareja buscarPareja(ciudades c, string nomb_ciudad)
 {
     if(igualNombreCiudad(darInfoPareja(c),nomb_ciudad))
