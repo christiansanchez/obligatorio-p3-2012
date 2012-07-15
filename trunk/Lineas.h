@@ -11,13 +11,31 @@ typedef struct nodoA {
 
 typedef nodoLineas * lineas;
 
-void Make(lineas &abb);
-bool Member(lineas abb, string codigo);
-void Insert(lineas &abb, linea* l);
-linea* Find(lineas abb, string codigo);
-void Modify(lineas abb, linea* nuevo);
-void Delete(lineas &abb, string codigo);
-void desplegarLineas(lineas abb);
-bool esVacioAbb(lineas abb);
+//Crear lineas vacias
+void crearLineas(lineas &l);
+
+//Devolver linea de lineas
+//PRECONDICION: lineas no vacia
+linea darLinea(lineas l);
+
+//Saber si las lineas son vacias
+bool esVacioLineas(lineas l);
+
+//Obtener la sublineas izquierda
+//PRECONDICION: lineas no vacia
+lineas lineasIzq(lineas l);
+
+//Obtener la sublineas derechas
+//PRECONDICION: lineas no vacia
+lineas lineasDer(lineas l);
+
+//se le pasa la linea y te devuelve una lineas atomica
+lineas crearLineasAtomica(linea l);
+
+//Agrega una nueva linea a las lineas la cual quedara ordenada
+void agregarLinea(lineas &ls, linea l);
+
+//dado un codigo de la linea dice si ya esta registrado o no
+bool existeLinea(lineas ls, linea l);
 
 #endif // LINEAS_H_INCLUDED
