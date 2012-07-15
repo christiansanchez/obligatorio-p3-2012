@@ -92,7 +92,7 @@ void desplegarCiudades(ciudades c)
     }
 }
 
-pareja buscarPareja(ciudades c, string nomb_ciudad)
+pareja buscarParejaNombreCiudad(ciudades c, string nomb_ciudad)
 {
     if(igualNombreCiudad(darInfoPareja(c),nomb_ciudad))
     {
@@ -102,11 +102,11 @@ pareja buscarPareja(ciudades c, string nomb_ciudad)
     {
         if(mayorNombreCiudad(darInfoPareja(c), nomb_ciudad))
         {
-            return(c->Hizq, nomb_ciudad);
+            return buscarParejaNombreCiudad(c->Hizq, nomb_ciudad);
         }
         else
         {
-            return(c->Hder, nomb_ciudad);
+            return buscarParejaNombreCiudad(c->Hder, nomb_ciudad);
         }
     }
 }
