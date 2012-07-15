@@ -82,3 +82,16 @@ bool existeLinea(lineas ls, linea l)
         }
     }
 }
+
+
+/*
+void deplegarBasicosLineas(lineas ls)
+{
+    if(!esVacioLineas(ls))
+    {
+        deplegarBasicosLineas(lineasIzq(ls));
+        desplegarDatosBasicos(darLinea(ls));
+        deplegarBasicosLineas(lineasDer(ls));
+    }
+}
+*/

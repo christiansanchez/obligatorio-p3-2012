@@ -43,7 +43,8 @@ void desplegarCiudades(ciudades c);
 
 //devuelve la pareja que se busca por nombre
 //PRECONDICION: debe existir la ciudad
-pareja buscarPareja(ciudades c, string nomb_cidad);
+pareja buscarParejaNombreCiudad(ciudades c, string nomb_ciudad);
+
 
 //modifica una pareja
 //void Modify(ciudades c, pareja nuevaP);

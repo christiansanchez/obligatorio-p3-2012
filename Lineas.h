@@ -38,4 +38,8 @@ void agregarLinea(lineas &ls, linea l);
 //dado un codigo de la linea dice si ya esta registrado o no
 bool existeLinea(lineas ls, linea l);
 
+//despliega los datos de lineas
+//void deplegarBasicosLineas(lineas ls);
+
+
 #endif // LINEAS_H_INCLUDED

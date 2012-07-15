@@ -30,4 +30,7 @@ bool igualesLinea(linea l1, linea l2);
 //dice si la primer linea es mayor que la segunda por codigo
 bool mayorLinea(linea l1, linea l2);
 
+//despliega los datos basicos de una linea(codigo, destino, origen, cantidad de paradas)
+//void desplegarDatosBasicos(linea l);
+
 #endif // LINEA_H_INCLUDED
