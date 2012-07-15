@@ -49,3 +49,9 @@ bool mayorPareja(pareja p1, pareja p2)
     darNombreCiudad(p2, nomb_ciudad2);
     return strmen(nomb_ciudad2, nomb_ciudad1);
 }
+
+void setNombreCiudad(pareja &p, string nombre)
+{
+    strcop(p.nombre_ciudad,nombre);
+}
+
