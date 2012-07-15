@@ -1,7 +1,7 @@
 #ifndef LINEA_H_INCLUDED
 #define LINEA_H_INCLUDED
 #include "Recorrido.h"
-
+#include "String.h"
 typedef struct{
 	string codigo;
 	int num_origen;
@@ -9,17 +9,25 @@ typedef struct{
 	recorrido linea_recorrido;
 } linea;
 
-void crearLinea(linea &l);
+//Permite cargar una linea desde teclado
 void cargarLinea(linea &l);
-void borrarLinea(linea &l);
-void mostrarLinea(linea l);
-string darCodigo(linea l);
-int darNum_origen(linea l);
-int darNum_destino(linea l);
-recorrido darLinea_recorrido(linea l);
-void setCodigo(linea &l, string codigo);
-void setNum_origen(linea &l, int numero);
-void setNum_destino(linea &l, int numero);
-void setRecorrido(linea &l, recorrido recorrido);
+
+//retorna codigo alfanumerico
+void darCodigo(linea l, string &codigo);
+
+//retorna el numero correspondiente a la ciudad de origen
+int darNumOrigen(linea l);
+
+//retorna el numero correspondiente a la ciudad de destino
+int darNumDestino(linea l);
+
+//retorna el recorrido correspondiente a esa linea
+recorrido darLineRecorrido(linea l);
+
+//dice si dos lineas tienen el mismo codigo
+bool igualesLinea(linea l1, linea l2);
+
+//dice si la primer linea es mayor que la segunda por codigo
+bool mayorLinea(linea l1, linea l2);
 
 #endif // LINEA_H_INCLUDED
