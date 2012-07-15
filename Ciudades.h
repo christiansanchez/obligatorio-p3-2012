@@ -12,12 +12,12 @@ typedef nodoCiudades * ciudades;
 
 void Make(ciudades &abb);
 bool Member(ciudades abb, int num_ciudad);
-void Insert(ciudades &abb, pareja* p);
-pareja* Find(ciudades abb, int num_ciudad);
-void Modify(ciudades abb, pareja* nuevo);
+void Insert(ciudades &abb, pareja p);
+pareja Find(ciudades abb, int num_ciudad);
+void Modify(ciudades abb, pareja nuevaP);
 void Delete(ciudades &abb, int num_ciudad);
 void desplegarCiudades(ciudades abb);
-bool esVacioAbb(ciudades abb);
+bool esVacio(ciudades abb);
 
 
 #endif // CIUDADES_H_INCLUDED
