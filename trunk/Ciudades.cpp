@@ -1,6 +1,6 @@
 #include "Ciudades.h"
 
-void crearCiudades(ciudades &c)
+void Make(ciudades &c)
 {
     c = NULL;
 }
@@ -46,8 +46,6 @@ bool Member(ciudades c, int num_ciudad)
         return Member(c->Hder,num_ciudad);
     else
         return Member(c->Hizq,num_ciudad);
-
-
 }
 
 bool Member(ciudades c, string nomb_ciudad)
@@ -62,7 +60,7 @@ bool Member(ciudades c, string nomb_ciudad)
         return Member(c->Hder, nomb_ciudad);
 }
 
-bool existePareja(ciudades c, pareja p)
+bool Member(ciudades c, pareja p)
 {
     if(esVacioCiudades(c))
     {
@@ -78,18 +76,18 @@ bool existePareja(ciudades c, pareja p)
         {
             if(mayorPareja(darInfoPareja(c),p))
             {
-                return existePareja(ciudadesIzq(c),p);
+                return Member(ciudadesIzq(c),p);
             }
             else
             {
-                return existePareja(ciudadesDer(c),p);
+                return Member(ciudadesDer(c),p);
             }
         }
 
     }
 }
 
-void agregarInfoPareja(ciudades &c, pareja p)
+void Insert(ciudades &c, pareja p)
 {
      if(esVacioCiudades(c))
     {
@@ -99,11 +97,11 @@ void agregarInfoPareja(ciudades &c, pareja p)
     {
         if(mayorPareja(darInfoPareja(c), p))
         {
-            agregarInfoPareja(c->Hizq, p);
+            Insert(c->Hizq, p);
         }
         else
         {
-            agregarInfoPareja(c->Hder, p);
+            Insert(c->Hder, p);
         }
     }
 }
@@ -118,7 +116,7 @@ void desplegarCiudades(ciudades c)
     }
 }
 
-pareja buscarParejaNombreCiudad(ciudades c, string nomb_ciudad)
+pareja Find(ciudades c, string nomb_ciudad)
 {
     if(igualNombreCiudad(darInfoPareja(c),nomb_ciudad))
     {
@@ -128,14 +126,27 @@ pareja buscarParejaNombreCiudad(ciudades c, string nomb_ciudad)
     {
         if(mayorNombreCiudad(darInfoPareja(c), nomb_ciudad))
         {
-            return buscarParejaNombreCiudad(c->Hizq, nomb_ciudad);
+            return Find(c->Hizq, nomb_ciudad);
         }
         else
         {
-            return buscarParejaNombreCiudad(c->Hder, nomb_ciudad);
+            return Find(c->Hder, nomb_ciudad);
         }
     }
 }
+
+pareja Find(ciudades c, int num_ciudad)
+{
+    if(darNumCiudad(c->info_pareja) == num_ciudad){
+        return c->info_pareja;
+    }else if(darNumCiudad(c->info_pareja) < num_ciudad){
+        return Find(c->Hder,num_ciudad);
+    }else{
+        return Find(c->Hizq,num_ciudad);
+    }
+
+}
+
 
 /*void Modify(ciudades abb, pareja nuevaP)
 {

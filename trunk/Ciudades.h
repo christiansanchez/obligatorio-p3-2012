@@ -11,7 +11,7 @@ typedef struct nodoA {
 typedef nodoCiudades * ciudades;
 
 //Crear ciudades vacias
-void crearCiudades(ciudades &c);
+void Make(ciudades &c);
 
 //Devolver informacion de pareja de ciudades
 //PRECONDICION: ciudades no vacia
@@ -32,10 +32,10 @@ ciudades ciudadesDer(ciudades c);
 ciudades crearCiudadesAtomica(pareja p);
 
 //dado una pareja y las ciudades devuelve true si existe la ciudad y false en caso contrario
-bool existePareja(ciudades c, pareja p);
+bool Member(ciudades c, pareja p);
 
 //Agrega una nueva pareja a las ciudades la cual quedara ordenada por nombre de ciudad
-void agregarInfoPareja(ciudades &c, pareja p);
+void Insert(ciudades &c, pareja p);
 
 //Muestro las ciudades en orden por alfabetico
 //PRECONDICION: para ver algo las ciudades no deben ser vacias
@@ -43,12 +43,15 @@ void desplegarCiudades(ciudades c);
 
 //devuelve la pareja que se busca por nombre
 //PRECONDICION: debe existir la ciudad
-pareja buscarParejaNombreCiudad(ciudades c, string nomb_ciudad);
+pareja Find(ciudades c, string nomb_ciudad);
 
+pareja Find(ciudades c, int num_ciudad);
 
 bool Member(ciudades c, int num_ciudad);
 
 bool Member(ciudades, string nomb_ciudad);
+
+
 //modifica una pareja
 //void Modify(ciudades c, pareja nuevaP);
 
