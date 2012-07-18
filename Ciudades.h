@@ -46,6 +46,9 @@ void desplegarCiudades(ciudades c);
 pareja buscarParejaNombreCiudad(ciudades c, string nomb_ciudad);
 
 
+bool Member(ciudades c, int num_ciudad);
+
+bool Member(ciudades, string nomb_ciudad);
 //modifica una pareja
 //void Modify(ciudades c, pareja nuevaP);
 

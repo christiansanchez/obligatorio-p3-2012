@@ -36,6 +36,32 @@ ciudades crearCiudadesAtomica(pareja p)
     return c;
 }
 
+bool Member(ciudades c, int num_ciudad)
+{
+    if (c==NULL)
+        return false;
+    else if(darNumCiudad(c->info_pareja) == num_ciudad)
+        return true;
+    else if(darNumCiudad(c->info_pareja) < num_ciudad)
+        return Member(c->Hder,num_ciudad);
+    else
+        return Member(c->Hizq,num_ciudad);
+
+
+}
+
+bool Member(ciudades c, string nomb_ciudad)
+{
+    if (c==NULL)
+        return false;
+    else if(igualNombreCiudad(darInfoPareja(c),nomb_ciudad))
+        return true;
+    else if(mayorNombreCiudad(darInfoPareja(c), nomb_ciudad))
+        return Member(c->Hizq, nomb_ciudad);
+    else
+        return Member(c->Hder, nomb_ciudad);
+}
+
 bool existePareja(ciudades c, pareja p)
 {
     if(esVacioCiudades(c))
