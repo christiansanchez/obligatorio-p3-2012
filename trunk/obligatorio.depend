@@ -1,0 +1,117 @@
+# depslib dependency file v1.0
+1342824226 source:c:\documents and settings\christian\escritorio\obligatorio_version_final\obligatorio\string.cpp
+	"String.h"
+	<stdio.h>
+
+1342824494 c:\documents and settings\christian\escritorio\obligatorio_version_final\obligatorio\string.h
+	<stdio.h>
+
+1342978663 source:c:\documents and settings\christian\escritorio\obligatorio_version_final\obligatorio\main.cpp
+	"Mapa.h"
+	"Lineas.h"
+	"Menu.h"
+	<iostream>
+	<stdio.h>
+
+1342809362 source:c:\documents and settings\christian\escritorio\obligatorio_version_final\obligatorio\prueba_string.cpp
+	"String.h"
+
+1342976097 source:c:\documents and settings\christian\escritorio\obligatorio_version_final\obligatorio\prueba_pareja.cpp
+	"Pareja.h"
+	<stdio.h>
+
+1342975072 c:\documents and settings\christian\escritorio\obligatorio_version_final\obligatorio\pareja.h
+	"String.h"
+
+1342975288 source:c:\documents and settings\christian\escritorio\obligatorio_version_final\obligatorio\pareja.cpp
+	"Pareja.h"
+	<stdio.h>
+
+1342976052 source:c:\documents and settings\christian\escritorio\obligatorio_version_final\obligatorio\prueba_ciudades.cpp
+	"Ciudades.h"
+	<stdio.h>
+
+1342895044 source:c:\documents and settings\christian\escritorio\obligatorio_version_final\obligatorio\ciudades.cpp
+	"Ciudades.h"
+
+1342889849 c:\documents and settings\christian\escritorio\obligatorio_version_final\obligatorio\ciudades.h
+	"Pareja.h"
+
+1342813687 source:c:\documents and settings\christian\escritorio\obligatorio_version_final\obligatorio\parada.cpp
+	"Parada.h"
+
+1342813608 c:\documents and settings\christian\escritorio\obligatorio_version_final\obligatorio\parada.h
+
+1342814126 source:c:\documents and settings\christian\escritorio\obligatorio_version_final\obligatorio\prueba_parada.cpp
+	"Parada.h"
+	<stdio.h>
+
+1342891186 source:c:\documents and settings\christian\escritorio\obligatorio_version_final\obligatorio\recorrido.cpp
+	"Recorrido.h"
+	<stdio.h>
+
+1342824899 c:\documents and settings\christian\escritorio\obligatorio_version_final\obligatorio\recorrido.h
+	"Parada.h"
+	"Ciudades.h"
+	"String.h"
+
+1342976173 source:c:\documents and settings\christian\escritorio\obligatorio_version_final\obligatorio\prueba_recorrido.cpp
+	"Recorrido.h"
+	<stdio.h>
+
+1342899348 source:c:\documents and settings\christian\escritorio\obligatorio_version_final\obligatorio\linea.cpp
+	"Linea.h"
+	<stdio.h>
+
+1342898254 c:\documents and settings\christian\escritorio\obligatorio_version_final\obligatorio\linea.h
+	"Recorrido.h"
+	"String.h"
+
+1342976116 source:c:\documents and settings\christian\escritorio\obligatorio_version_final\obligatorio\prueba_linea.cpp
+	"Linea.h"
+	<stdio.h>
+
+1342976162 source:c:\documents and settings\christian\escritorio\obligatorio_version_final\obligatorio\prueba_lineas.cpp
+	"Lineas.h"
+	<stdio.h>
+
+1342969669 c:\documents and settings\christian\escritorio\obligatorio_version_final\obligatorio\lineas.h
+	"String.h"
+	"Linea.h"
+
+1342969664 source:c:\documents and settings\christian\escritorio\obligatorio_version_final\obligatorio\lineas.cpp
+	"Lineas.h"
+	<stdio.h>
+
+1342971631 source:c:\documents and settings\christian\escritorio\obligatorio_version_final\obligatorio\mapa.cpp
+	"Tramo.h"
+	<stdio.h>
+
+1342969818 c:\documents and settings\christian\escritorio\obligatorio_version_final\obligatorio\tramo.h
+
+1342969841 source:c:\documents and settings\christian\escritorio\obligatorio_version_final\obligatorio\tramo.cpp
+	"Tramo.h"
+	<stdio.h>
+
+1342972588 source:c:\documents and settings\christian\escritorio\obligatorio_version_final\obligatorio\prueba_mapa.cpp
+	"Mapa.h"
+	<stdio.h>
+
+1342971605 c:\documents and settings\christian\escritorio\obligatorio_version_final\obligatorio\mapa.h
+	"Tramo.h"
+	<stdio.h>
+
+1342972121 source:c:\documents and settings\christian\escritorio\obligatorio_version_final\obligatorio\prueba_tramo.cpp
+	"Tramo.h"
+	<stdio.h>
+
+1342983843 source:c:\documents and settings\christian\escritorio\obligatorio_version_final\obligatorio\menu.cpp
+	"Menu.h"
+	<stdio.h>
+	<stdlib.h>
+
+1342983820 c:\documents and settings\christian\escritorio\obligatorio_version_final\obligatorio\menu.h
+	"Ciudades.h"
+	"Lineas.h"
+	"Mapa.h"
+
