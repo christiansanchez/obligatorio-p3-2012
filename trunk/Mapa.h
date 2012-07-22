@@ -6,22 +6,27 @@
 const int cant_ciudades = 100;/*cantidad de ciudades para prueba*/
 typedef tramo mapa[cant_ciudades];
 
-void crearMapa(mapa &m);
-void agregarTramo (mapa &m, int i, int j);
-int calcularGrado (mapa m, int i);
-void listarCiudadesAdyacentes (mapa m, int i);
-bool hayTramo (mapa m, int i, int j);
-bool esSimple (mapa m);
-bool esCompleto (mapa m);
-bool esRegular (mapa m);
-/*
-//creo un mapa vacio
-void crearMapa(mapa &m);
+void Crear(mapa &m);//Crea un grafo vacío.
 
-//si hay tramo en el mapa entre 2 ciudades
-bool hayTramo(mapa m, int ciudad1, int ciudad2);
-*/
+//determina si un vertice existe en el grafo
+//bool PerteneceVertice(mapa m, int i);
 
+//determina si la arista pertenece al grafo
+bool PertenceArista(mapa m, int i, int j);
 
+//Inserta un nuevo vertice al grafo
+//PRECONDICION: el vertice no debe pertencer al grafo
+//void InsertarVertice(mapa &m, int v);
 
+//Inserta una nueva arista al grafo
+//PRECONDICION: la arista no debe pertenecer al grafo
+void InsertarArista(mapa &m, int v1, int v2);
+
+//determina el grado de un vertice
+//PRECONDICION: el vertice debe pertencer al grafo
+int GradoVertice(mapa m, int v);
+
+void listarCiudadesAdyacentes (mapa m, int ciu1);
+
+void DFS (mapa map,int ciu1, int ciuActual, bool visitado[cant_ciudades],bool existe);
 #endif // MAPA_H_INCLUDED

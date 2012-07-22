@@ -10,7 +10,7 @@ typedef struct{
 } linea;
 
 //Permite cargar una linea desde teclado
-void cargarLinea(linea &l);
+void cargarLinea(linea &l, recorrido r);
 
 //retorna codigo alfanumerico
 void darCodigo(linea l, string &codigo);
@@ -27,10 +27,14 @@ recorrido darLineRecorrido(linea l);
 //dice si dos lineas tienen el mismo codigo
 bool igualesLinea(linea l1, linea l2);
 
+bool igualesLineaCodigo(linea l, string codigo);
+
 //dice si la primer linea es mayor que la segunda por codigo
 bool mayorLinea(linea l1, linea l2);
 
+bool mayorLineaCodigo(linea l1, string codigo);
+
 //despliega los datos basicos de una linea(codigo, destino, origen, cantidad de paradas)
-//void desplegarDatosBasicos(linea l);
+void desplegarDatosBasicos(linea l, ciudades c);
 
 #endif // LINEA_H_INCLUDED

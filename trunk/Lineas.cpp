@@ -1,30 +1,9 @@
 #include "Lineas.h"
 #include <stdio.h>
 
-void crearLineas(lineas &l)
+void Make(lineas &l)
 {
     l = NULL;
-}
-
-linea darLinea(lineas l)
-{
-   return l->info_linea;
-}
-
-
-bool esVacioLineas(lineas l)
-{
-    return (bool)(l==NULL);
-}
-
-lineas lineasIzq(lineas l)
-{
-    return l->Hizq;
-}
-
-lineas lineasDer(lineas l)
-{
-    return l->Hder;
 }
 
 lineas crearLineasAtomica(linea l)
@@ -37,8 +16,12 @@ lineas crearLineasAtomica(linea l)
     return ls;
 }
 
+bool esVacioLineas(lineas l)
+{
+    return (bool)(l==NULL);
+}
 
-void agregarLinea(lineas &ls, linea l)
+void Insert(lineas &ls, linea l)
 {
     if(esVacioLineas(ls))
     {
@@ -48,16 +31,50 @@ void agregarLinea(lineas &ls, linea l)
     {
         if(mayorLinea(darLinea(ls), l))
         {
-            agregarLinea(ls->Hizq, l);
+            Insert(ls->Hizq, l);
         }
         else
         {
-            agregarLinea(ls->Hder, l);
+            Insert(ls->Hder, l);
         }
     }
 }
 
-bool existeLinea(lineas ls, linea l)
+linea darLinea(lineas l)
+{
+   return l->info_linea;
+}
+
+lineas lineasIzq(lineas l)
+{
+    return l->Hizq;
+}
+
+lineas lineasDer(lineas l)
+{
+    return l->Hder;
+}
+
+linea Find(lineas ls, string codigo)
+{
+    if(igualesLineaCodigo(darLinea(ls),codigo))
+    {
+        return darLinea(ls);
+    }
+    else
+    {
+        if(mayorLineaCodigo(darLinea(ls), codigo))
+        {
+            return Find(ls->Hizq, codigo);
+        }
+        else
+        {
+            return Find(ls->Hder, codigo);
+        }
+    }
+}
+
+bool Member(lineas ls, string codigo)
 {
     if(esVacioLineas(ls))
     {
@@ -65,33 +82,30 @@ bool existeLinea(lineas ls, linea l)
     }
     else
     {
-        if(igualesLinea(darLinea(ls),l))
+        if(igualesLineaCodigo(darLinea(ls), codigo))
         {
             return true;
         }
         else
         {
-            if(mayorLinea(darLinea(ls),l))
+            if(mayorLineaCodigo(darLinea(ls), codigo))
             {
-                return existeLinea(ls->Hizq,l);
+               return Member(ls->Hizq, codigo);
             }
             else
             {
-                return existeLinea(ls->Hder,l);
+                return Member(ls->Hder, codigo);
             }
         }
     }
 }
-
-
 /*
-void deplegarBasicosLineas(lineas ls)
+void desplegarLineas(lineas ls, ciudades c)
 {
-    if(!esVacioLineas(ls))
+    if(ls!=NULL)
     {
-        deplegarBasicosLineas(lineasIzq(ls));
-        desplegarDatosBasicos(darLinea(ls));
-        deplegarBasicosLineas(lineasDer(ls));
+        desplegarLineas(ls->Hizq, c);
+        desplegarDatosBasicos(darLinea(ls),c);
+        desplegarLineas(ls->Hder, c);
     }
-}
-*/
+}*/

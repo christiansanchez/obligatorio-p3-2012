@@ -1,37 +1,15 @@
 #include "Recorrido.h"
 #include <stdio.h>
 
-
-void CrearRecorrido (recorrido &r)
-{ r.prim = NULL;
+void Crear(recorrido &r)
+{
+    r.prim = NULL;
 	r.ult = NULL;
 }
 
-bool RecorridoVacio (recorrido r)
-{	return (bool) (r.prim==NULL && r.ult==NULL);
-}
-
-//Precondición: !Vacia(l)
-parada PrimeraParada (recorrido r)
-{	return r.prim->info_parada;
-}
-
-//Precondición: !Vacia(l)
-parada UltimaParada (recorrido r)
-{	return r.ult->info_parada;
-}
-
-//Precondición : !Vacia(l)
-void RestoRecorrido (recorrido &r)
-{	nodoR * aux = r.prim->sig;
-	delete (r.prim);
-	r.prim = aux;
-	if (r.prim == NULL)
-	{	r.ult = NULL;}
-}
-
-void InsertaOrigen (recorrido &r, parada p)//InsFront
-{	nodoR * nuevo = new nodoR;
+void InsFront(recorrido &r, parada p)
+{
+    nodoR * nuevo = new nodoR;
 	nuevo->info_parada = p;
 	nuevo->sig = r.prim;
 	r.prim = nuevo;
@@ -39,41 +17,92 @@ void InsertaOrigen (recorrido &r, parada p)//InsFront
 	r.ult = nuevo;
 }
 
-void InsertaDestino (recorrido &r, parada p)//InsBack
-{	nodoR * nuevo = new nodoR;
-	nuevo->info_parada = p;
-	nuevo->sig = NULL;
-	if (r.ult == NULL)
-	{ r.ult = nuevo;
-		r.prim = nuevo;
-	}
-	else
-	{ r.ult->sig = nuevo;
-		r.ult = nuevo;
-	}
+bool Esvacia(recorrido r)
+{
+    return (bool)(r.prim==NULL && r.ult==NULL);
 }
 
-int CantParadasRecorrido(recorrido r)
+parada Primero(recorrido r)
+{
+    return r.prim->info_parada;
+}
+
+void Resto(recorrido &r)
+{	nodoR * aux = r.prim->sig;
+	delete (r.prim);
+	r.prim = aux;
+	if (r.prim == NULL)
+	{
+	    r.ult = NULL;
+    }
+}
+
+int Largo(recorrido r)
 {	int cont = 0;
 	nodoR * aux = r.prim;
 	while (aux->sig !=NULL)
-	{ cont++;
+	{
+	    cont++;
 		aux = aux->sig;
 	}
 	cont++;
 	return cont;
 }
 
-void ListarRecorrido(recorrido r)
-{	string nombre;
+parada Ultimo (recorrido r)
+{
+    return r.ult->info_parada;
+}
+
+void InsBack(recorrido &r, parada p)//InsBack
+{	nodoR * nuevo = new nodoR;
+	nuevo->info_parada = p;
+	nuevo->sig = NULL;
+	if (r.ult == NULL)
+	{
+	    r.ult = nuevo;
+		r.prim = nuevo;
+	}
+	else
+	{
+	    r.ult->sig = nuevo;
+		r.ult = nuevo;
+	}
+}
+
+bool Pertenece (recorrido r, parada p)
+{
+    bool esta = false;
+	while ((r.prim != NULL) && (!esta))
+	{
+	    if (darNum_parada(r.prim->info_parada) == darNum_parada(p))
+			esta = true;
+		else
+			r.prim = r.prim->sig;
+	}
+	return esta;
+}
+
+void ListarRecorrido(recorrido r,ciudades ciu)
+{
+    string nombre;
+	int numciu;
 	nodoR * aux = r.prim;
 	while (aux->sig !=NULL)
-	{ printf("\nPARADA: %d",darNum_parada(aux->info_parada));
-		printf("\nCIUDAD: %d",darNum_Ciudad_Parada(aux->info_parada));
+	{
+	    printf("\nPARADA: %d",darNum_parada(aux->info_parada));
+		numciu = darNum_Ciudad_Parada(aux->info_parada);
+		darNombreCiudad(Find(ciu, numciu), nombre);
+		printf("\nCIUDAD: ");
+		print(nombre);
 		printf("\n---------------");
 		aux = aux->sig;
 	}
 	printf("\nPARADA: %d",darNum_parada(aux->info_parada));
-	printf("\nCIUDAD: %d",darNum_Ciudad_Parada(aux->info_parada));
+	numciu=darNum_Ciudad_Parada(aux->info_parada);
+	//printf("\nnumero ciudad: %d\n",numciu);
+    darNombreCiudad(Find(ciu, numciu),nombre);
+	printf("\nCIUDAD: ");
+	print(nombre);
 	printf("\n= = = = = = = = = = :FIN DEL RECORRIDO");
 }

@@ -3,23 +3,40 @@
 #include "String.h"
 #include "Linea.h"
 
-typedef struct nodoA {
+typedef struct nodoLS {
     linea info_linea;
-    nodoA * Hizq;
-    nodoA * Hder;
+    nodoLS * Hizq;
+    nodoLS * Hder;
 } nodoLineas;
 
 typedef nodoLineas * lineas;
 
-//Crear lineas vacias
-void crearLineas(lineas &l);
+//Primitivas:
+//----------------------------------------------------
+//crea un diccionario vacio
+void Make(lineas &l);
+
+//dice si existe un elemento en el diccionario segun la clave
+bool Member(lineas ls, string codigo);
+
+//inserta un elemento en el diccionario
+//PRECONDICION: el elemento a insertar no es miembro del diccionario
+void Insert(lineas &ls, linea l);
+
+//dada la clave de un elemento devuelve el elemento con dicha clave
+//PRECONDICION: el elemento es miembro del diccionario
+linea Find(lineas ls, string codigo);
+//----------------------------------------------------
+
+//se le pasa la linea y te devuelve una lineas atomica
+lineas crearLineasAtomica(linea l);
+
+//Saber si el diccionario es vacio
+bool esVacioLineas(lineas l);
 
 //Devolver linea de lineas
 //PRECONDICION: lineas no vacia
 linea darLinea(lineas l);
-
-//Saber si las lineas son vacias
-bool esVacioLineas(lineas l);
 
 //Obtener la sublineas izquierda
 //PRECONDICION: lineas no vacia
@@ -29,17 +46,7 @@ lineas lineasIzq(lineas l);
 //PRECONDICION: lineas no vacia
 lineas lineasDer(lineas l);
 
-//se le pasa la linea y te devuelve una lineas atomica
-lineas crearLineasAtomica(linea l);
-
-//Agrega una nueva linea a las lineas la cual quedara ordenada
-void agregarLinea(lineas &ls, linea l);
-
-//dado un codigo de la linea dice si ya esta registrado o no
-bool existeLinea(lineas ls, linea l);
-
-//despliega los datos de lineas
-//void deplegarBasicosLineas(lineas ls);
-
+//muestro todas las lineas
+//void desplegarLineas(lineas ls, ciudades c);
 
 #endif // LINEAS_H_INCLUDED

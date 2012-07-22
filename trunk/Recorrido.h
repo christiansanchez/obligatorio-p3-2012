@@ -1,44 +1,41 @@
 #ifndef RECORRIDO_H_INCLUDED
 #define RECORRIDO_H_INCLUDED
 #include "Parada.h"
-#include "string.h"
-
-typedef struct nodoL {  parada info_parada;
+#include "Ciudades.h"
+#include "String.h"
+typedef struct nodoL {
+                        parada info_parada;
                         nodoL * sig;
                      }nodoR;
 
-typedef struct {    nodoR * prim;
-                    nodoR * ult;
-                } recorrido;
+typedef struct {
+                    nodoR * prim;
+					nodoR * ult;
+                }recorrido;
 
+// OPERACIONES PRIMITIVAS ------------
 
-void CrearRecorrido (recorrido &r);
+void Crear(recorrido &r);//Crea una secuencia vacía.
 
-bool RecorridoVacio (recorrido r);
+void InsFront(recorrido &r, parada p);//Agrega un elemento de tipo "parada" a la secuencia.
 
-//Precondición: !Vacia(l)
-parada PrimeraParada (recorrido r);
+bool Esvacia(recorrido r);//Determina si la secuencia está vacía o no.
 
-//Precondición: !Vacia(l)
-parada UltimaParada (recorrido r);
+//Precondición: la secuencia no es vacía.
+parada Primero(recorrido r);//Devuelve el primer elemento de la secuencia.
 
-//Precondición : !Vacia(l)
-void RestoRecorrido (recorrido &r);
+//Precondición : la secuencia no es vacía.
+void Resto(recorrido &r);//Devuelve la secuencia sin su primer elemento.
 
-void InsertaOrigen (recorrido &r, parada p);
+int Largo(recorrido r);//Devuelve la cantidad de elementos de la secuencia.
 
-void InsertaDestino (recorrido &r, parada p);
+//Precondición : la secuencia no es vacía.
+parada Ultimo(recorrido r);
 
-int CantParadasRecorrido(recorrido r);
+void InsBack(recorrido &r, parada p);
 
-void ListarRecorrido(recorrido r);
+bool Pertenece (recorrido r, parada p);
+
+void ListarRecorrido(recorrido r, ciudades ciu);
 
 #endif // RECORRIDO_H_INCLUDED
-
-
-/*
-
-K-ésimo: Secuencia x N -> T
-Devuelve el elemento que ocupa la posición K de la secuencia.
-Precondición: El largo de la secuencia es mayor o igual a K.
-*/

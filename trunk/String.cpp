@@ -1,4 +1,5 @@
 #include "String.h"
+#include <stdio.h>
 
 void strcrear (string & s)
 {
