@@ -239,8 +239,44 @@ void opcion_dos(mapa map, ciudades ciud)
 
 void opcion_tres(mapa map, ciudades ciud, lineas &ls)
 {
-    system("cls");
-    printf("\n\n\nEn construccion");
+    string codigo;
+    int op;
+    do
+    {
+        system("cls");
+        printf("\t\t\t##### INGRESAR NUEVA LINEA A LA EMPRESA #####\n\n");
+        strcrear(codigo);
+        printf("\nIngrese el codigo de la nueva linea que sera ingresada al sistema: ");
+        fflush(stdin);
+        scan(codigo);
+        if(!Member(ls,codigo))
+        {
+            //seguir ak
+            printf("\n\n En construccion");
+        }
+        else
+        {
+            printf("\nSe encuentra ya registrada una linea con el codigo ");
+            print(codigo);
+            printf(" en el sistema.");
+        }
+        printf("\n\n\n\t1 - Agregar nueva linea.");
+        printf("\n\n\t2 - Volver a menu principal.");
+        printf("\n\n\tOpcion seleccionada: ");
+        scanf("%d",&op);
+        while(op>2||op<1)
+        {
+                system("cls");
+                printf("\t\t\t##### INGRESAR NUEVA LINEA A LA EMPRESA #####\n\n");
+                printf("\nLa opcion elegida es incorrecta. Intentelo nuevamente");
+                printf("\n\n\n\t1 - Agregar nueva linea.");
+                printf("\n\n\t2 - Volver a menu principal.");
+                printf("\n\n\tOpcion seleccionada: ");
+                scanf("%d",&op);
+        }
+
+    }while(op!=2);
+
 }
 
 void opcion_cuatro(ciudades ciud, lineas ls)
@@ -251,8 +287,43 @@ void opcion_cuatro(ciudades ciud, lineas ls)
 
 void opcion_cinco(mapa map, ciudades ciud, lineas &ls)
 {
-    system("cls");
-    printf("\n\n\nEn construccion");
+    string codigo;
+    int op;
+    do
+    {
+        system("cls");
+        printf("\t\t\t##### INGRESAR PARADA SEGUN CODIGO DE LINEA #####\n\n");
+        strcrear(codigo);
+        printf("\nIngrese el codigo de la linea a la que va a ingresar una parada: ");
+        fflush(stdin);
+        scan(codigo);
+        if(Member(ls,codigo))
+        {
+            //seguir ak
+            printf("\n\n En construccion");
+        }
+        else
+        {
+            printf("\nNo se encuentra ninguna linea en el sistema con el codigo ");
+            print(codigo);
+            printf(".");
+        }
+        printf("\n\n\n\t1 - Agregar otra parada.");
+        printf("\n\n\t2 - Volver a menu principal.");
+        printf("\n\n\tOpcion seleccionada: ");
+        scanf("%d",&op);
+        while(op>2||op<1)
+        {
+                system("cls");
+                printf("\t\t\t##### INGRESAR PARADA SEGUN CODIGO DE LINEA #####\n\n");
+                printf("\nLa opcion elegida es incorrecta. Intentelo nuevamente");
+                printf("\n\n\n\t1 - Agregar otra parada.");
+                printf("\n\n\t2 - Volver a menu principal.");
+                printf("\n\n\tOpcion seleccionada: ");
+                scanf("%d",&op);
+        }
+
+    }while(op!=2);
 }
 
 void opcion_seis(ciudades ciud, lineas ls)
