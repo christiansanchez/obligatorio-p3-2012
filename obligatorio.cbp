@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="obligatorio" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin\Debug\obligatorio" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj\Debug\" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin\Release\obligatorio" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj\Release\" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add option="-fexceptions" />
+		</Compiler>
+		<Unit filename="Ciudades.cpp" />
+		<Unit filename="Ciudades.h" />
+		<Unit filename="Linea.cpp" />
+		<Unit filename="Linea.h" />
+		<Unit filename="Lineas.cpp" />
+		<Unit filename="Lineas.h" />
+		<Unit filename="Mapa.cpp" />
+		<Unit filename="Mapa.h" />
+		<Unit filename="Menu.cpp" />
+		<Unit filename="Menu.h" />
+		<Unit filename="Parada.cpp" />
+		<Unit filename="Parada.h" />
+		<Unit filename="Pareja.cpp" />
+		<Unit filename="Pareja.h" />
+		<Unit filename="Recorrido.cpp" />
+		<Unit filename="Recorrido.h" />
+		<Unit filename="String.cpp" />
+		<Unit filename="String.h" />
+		<Unit filename="Tramo.cpp" />
+		<Unit filename="Tramo.h" />
+		<Unit filename="main.cpp" />
+		<Unit filename="prueba_ciudades.cpp" />
+		<Unit filename="prueba_linea.cpp" />
+		<Unit filename="prueba_lineas.cpp" />
+		<Unit filename="prueba_mapa.cpp" />
+		<Unit filename="prueba_parada.cpp" />
+		<Unit filename="prueba_pareja.cpp" />
+		<Unit filename="prueba_recorrido.cpp" />
+		<Unit filename="prueba_string.cpp" />
+		<Unit filename="prueba_tramo.cpp" />
+		<Extensions>
+			<code_completion />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
