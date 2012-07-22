@@ -1,7 +1,6 @@
 #ifndef CIUDADES_H_INCLUDED
 #define CIUDADES_H_INCLUDED
 #include "Pareja.h"
-
 typedef struct nodoA {
     pareja info_pareja;
     nodoA * Hizq;
@@ -45,15 +44,14 @@ void desplegarCiudades(ciudades c);
 //PRECONDICION: debe existir la ciudad
 pareja Find(ciudades c, string nomb_ciudad);
 
+//auxiliar de find para buscar con numero de ciudad
+void buscarParejaNum(ciudades c, int num_c, bool &encontrado, pareja &p);
+
 pareja Find(ciudades c, int num_ciudad);
 
-bool Member(ciudades c, int num_ciudad);
+//bool Member(ciudades c, int num_ciudad);
 
-bool Member(ciudades, string nomb_ciudad);
-
-
-//modifica una pareja
-//void Modify(ciudades c, pareja nuevaP);
+bool Member(ciudades c, string nomb_ciudad);
 
 
 #endif // CIUDADES_H_INCLUDED

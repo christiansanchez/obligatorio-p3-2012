@@ -1,66 +1,72 @@
-#include "mapa.h"
 #include "Tramo.h"
 #include <stdio.h>
 
-void crearMapa(mapa &m)
-{ int i;
-  for(i=0;i<cant_ciudades;i++)
-  { crearTramo(m[i]);
-  }
-}
+const int cant_ciudades = 100;/*cantidad de ciudades para prueba*/
+typedef tramo mapa[cant_ciudades];
 
-void agregarTramo (mapa &m, int i, int j)
-{	insFrontTramo (m[i],j);
-	insFrontTramo (m[j],i);
-}
-
-int calcularGrado (mapa m, int i)
-{   return(largoTramo(m[i]));
-}
-
-void listarCiudadesAdyacentes (mapa m, int i)
-{  desplegarTramo(m[i]);
-}
-
-bool hayTramo (mapa m, int i, int j)
-{ return(perteneceTramo(m[i],j));
-}
-
-bool esSimple (mapa m)
-{   int i=0;
-    while ((i<cant_ciudades) && (!perteneceTramo(m[i],i)))
-    {   i++;
+void Crear(mapa &m)
+{
+    for(int i=0; i<cant_ciudades; i++)
+    {
+        crearTramo(m[i]);
     }
-    if (i == cant_ciudades)
-        return true;
+}
+/*
+bool PerteneceVertice(mapa m, int i)
+{
+
+}*/
+
+bool PertenceArista(mapa m, int i, int j)
+{
+    return perteneceTramo(m[i],j);
+}
+
+/*void InsertarVertice(mapa &m, int v)
+{
+
+}*/
+
+void InsertarArista(mapa &m, int v1, int v2)
+{
+    insFrontTramo(m[v1],v2);
+    if (v1 != v2)
+    {
+        insFrontTramo(m[v2],v1);
+    }
+}
+
+int GradoVertice(mapa m, int v)
+{
+    int cont = largoTramo(m[v]);
+    if (!perteneceTramo(m[v],v))
+    {
+        return cont;
+    }
     else
-        return false;
-}
-
-bool esCompleto (mapa m)
-{   int i=0,j=1;
-    bool es = false;
-    if (esSimple(m))
-    {   while ((i < cant_ciudades)&& hayTramo(m,i,j))
-        {   while ((j<cant_ciudades) && hayTramo(m,i,j))
-            {   es = true;
-                j++;
-            }
-            i++;
-        }
+    {
+        return (cont+1);
     }
-    return es;
 }
 
-bool esRegular (mapa m)
-{   int i = 1, aux;
-    aux = calcularGrado(m,0);
-
-    while ((i < cant_ciudades) && (aux = calcularGrado(m,i)))
-    {   i++;
-    }
-    if (i == cant_ciudades)
-        return true;
-    else
-        return false;
+void listarCiudadesAdyacentes (mapa m, int ciu1)
+{
+    desplegarTramo(m[ciu1]);
 }
+
+void DFS (mapa map,int ciu1, int ciuActual, bool visitado[cant_ciudades],bool existe)
+{
+    tramo aux;
+	visitado[ciuActual] = true;
+	aux = map[ciuActual];
+	while (aux!=NULL)
+	{  if (!visitado[aux->num_ciudad_tramo])
+		{
+		    DFS (map,ciu1,aux->num_ciudad_tramo,visitado,existe);
+		}
+		aux = aux->sig;
+	}
+	if(ciuActual==ciu1)
+		existe=true;
+}
+

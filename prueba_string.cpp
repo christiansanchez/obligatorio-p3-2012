@@ -1,6 +1,6 @@
 #include "String.h"
 
-int mainS()
+int main_ya_probado1()
 {
     char * prueba;
     char * prueba2;

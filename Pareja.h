@@ -9,7 +9,7 @@ typedef struct{
 
 
 //Permite cargar una pareja desde teclado
-void cargarPareja(pareja &p);
+void cargarPareja(pareja &p, int num_ciudad);
 
 //selectora de numero de ciudad
 int darNumCiudad(pareja p);

@@ -35,7 +35,7 @@ ciudades crearCiudadesAtomica(pareja p)
     c -> Hizq = NULL;
     return c;
 }
-
+/*
 bool Member(ciudades c, int num_ciudad)
 {
     if (c==NULL)
@@ -47,7 +47,7 @@ bool Member(ciudades c, int num_ciudad)
     else
         return Member(c->Hizq,num_ciudad);
 }
-
+*/
 bool Member(ciudades c, string nomb_ciudad)
 {
     if (c==NULL)
@@ -135,28 +135,34 @@ pareja Find(ciudades c, string nomb_ciudad)
     }
 }
 
-pareja Find(ciudades c, int num_ciudad)
+void buscarParejaNum(ciudades c, int num_c, bool &encontrado, pareja &p)
 {
-    if(darNumCiudad(c->info_pareja) == num_ciudad){
-        return c->info_pareja;
-    }else if(darNumCiudad(c->info_pareja) < num_ciudad){
-        return Find(c->Hder,num_ciudad);
-    }else{
-        return Find(c->Hizq,num_ciudad);
+    if(!esVacioCiudades(c))
+    {
+        if(!encontrado && (darNumCiudad(c->info_pareja) == num_c))
+        {
+            encontrado = true;
+            p = c->info_pareja;
+        }
+        else
+        {
+            if(!encontrado)
+            {
+                buscarParejaNum(c->Hder, num_c, encontrado, p);
+            }
+            if(!encontrado)
+            {
+                buscarParejaNum(c->Hizq, num_c, encontrado, p);
+            }
+        }
     }
-
 }
 
-
-/*void Modify(ciudades abb, pareja nuevaP)
+pareja Find(ciudades c, int num_ciudad)
 {
-    if(darNum_ciudad(abb->info_pareja) == darNum_ciudad(nuevaP)){
-        string s;
-        DarNombreCiudad(nuevaP, s);
-        setNombre_ciudad(abb->info_pareja, s);
-    }else if(darNum_ciudad(abb->info_pareja) < darNum_ciudad(nuevaP)){
-        Modify(abb->Hder, nuevaP);
-    }else{
-        Modify(abb->Hizq, nuevaP);
-    }
-}*/
+    bool encontrado = false;
+    pareja p;
+    buscarParejaNum(c, num_ciudad, encontrado, p);
+    return p;
+}
+

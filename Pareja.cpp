@@ -1,11 +1,11 @@
 #include "Pareja.h"
 #include <stdio.h>
 
-void cargarPareja(pareja &p)
+void cargarPareja(pareja &p, int num_ciudad)
 {
-    printf("Ingrese el numero de la ciudad: ");
-    scanf("%d",&p.num_ciudad);
-    printf("Ingrese el nombre de la ciudad: ");
+    fflush(stdin);
+    p.num_ciudad = num_ciudad;
+    printf("\nIngrese el nombre de la ciudad que desea registrar: ");
     fflush(stdin);
     strcrear(p.nombre_ciudad);
     scan(p.nombre_ciudad);
@@ -25,9 +25,9 @@ void desplegarPareja(pareja p)
 {
     string nombre;
     strcrear(nombre);
-    darNombreCiudad(p,nombre);
     printf("El numero de la ciudad es: %d", darNumCiudad(p));
     printf("\nEl nombre de la ciudad es: ");
+    darNombreCiudad(p,nombre);
     print(nombre);
     printf("\n");
 }
