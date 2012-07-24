@@ -1,5 +1,3 @@
-#include "Mapa.h"
-#include "Lineas.h"
 #include "Menu.h"
 #include <iostream>
 #include <stdio.h>

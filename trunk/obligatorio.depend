@@ -51,23 +51,21 @@
 	"Recorrido.h"
 	<stdio.h>
 
-1342824899 c:\documents and settings\christian\escritorio\obligatorio_version_final\obligatorio\recorrido.h
+1343151349 c:\documents and settings\christian\escritorio\obligatorio_version_final\obligatorio\recorrido.h
 	"Parada.h"
 	"Ciudades.h"
-	"String.h"
 
 1342976173 source:c:\documents and settings\christian\escritorio\obligatorio_version_final\obligatorio\prueba_recorrido.cpp
 	"Recorrido.h"
 	<stdio.h>
 
-1343088421 source:c:\documents and settings\christian\escritorio\obligatorio_version_final\obligatorio\linea.cpp
+1343089949 source:c:\documents and settings\christian\escritorio\obligatorio_version_final\obligatorio\linea.cpp
 	"Linea.h"
 	<stdio.h>
 	<conio.h>
 
-1343086209 c:\documents and settings\christian\escritorio\obligatorio_version_final\obligatorio\linea.h
+1343151327 c:\documents and settings\christian\escritorio\obligatorio_version_final\obligatorio\linea.h
 	"Recorrido.h"
-	"String.h"
 
 1343065365 source:c:\documents and settings\christian\escritorio\obligatorio_version_final\obligatorio\prueba_linea.cpp
 	"Linea.h"
@@ -77,8 +75,7 @@
 	"Lineas.h"
 	<stdio.h>
 
-1343089032 c:\documents and settings\christian\escritorio\obligatorio_version_final\obligatorio\lineas.h
-	"String.h"
+1343151332 c:\documents and settings\christian\escritorio\obligatorio_version_final\obligatorio\lineas.h
 	"Linea.h"
 
 1343089840 source:c:\documents and settings\christian\escritorio\obligatorio_version_final\obligatorio\lineas.cpp
@@ -113,8 +110,7 @@
 	<stdlib.h>
 	<conio.h>
 
-1343077039 c:\documents and settings\christian\escritorio\obligatorio_version_final\obligatorio\menu.h
-	"Ciudades.h"
+1343151340 c:\documents and settings\christian\escritorio\obligatorio_version_final\obligatorio\menu.h
 	"Lineas.h"
 	"Mapa.h"
 
