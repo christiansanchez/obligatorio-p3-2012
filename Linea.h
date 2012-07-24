@@ -10,7 +10,7 @@ typedef struct{
 } linea;
 
 //Permite cargar una linea desde teclado
-void cargarLinea(linea &l, recorrido r);
+void cargarLinea(linea &l, ciudades ciud, string codigo, bool &ok);
 
 //retorna codigo alfanumerico
 void darCodigo(linea l, string &codigo);
@@ -36,5 +36,14 @@ bool mayorLineaCodigo(linea l1, string codigo);
 
 //despliega los datos basicos de una linea(codigo, destino, origen, cantidad de paradas)
 void desplegarDatosBasicos(linea l, ciudades c);
+
+//despliega numero de parada y su nombre
+void desplegarParadas(linea l, ciudades c);
+
+//modificar ciudad de destino
+void cambiarCiduadDestino(linea &l, int new_num_dest);
+
+//modifica la el recorrido de la linea
+void agregarParada(linea &l,int new_num_dest);
 
 #endif // LINEA_H_INCLUDED

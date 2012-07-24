@@ -53,15 +53,6 @@
 		<Unit filename="Tramo.cpp" />
 		<Unit filename="Tramo.h" />
 		<Unit filename="main.cpp" />
-		<Unit filename="prueba_ciudades.cpp" />
-		<Unit filename="prueba_linea.cpp" />
-		<Unit filename="prueba_lineas.cpp" />
-		<Unit filename="prueba_mapa.cpp" />
-		<Unit filename="prueba_parada.cpp" />
-		<Unit filename="prueba_pareja.cpp" />
-		<Unit filename="prueba_recorrido.cpp" />
-		<Unit filename="prueba_string.cpp" />
-		<Unit filename="prueba_tramo.cpp" />
 		<Extensions>
 			<code_completion />
 			<debugger />

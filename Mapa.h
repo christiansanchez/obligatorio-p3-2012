@@ -3,20 +3,13 @@
 #include "Tramo.h"
 #include <stdio.h>
 
-const int cant_ciudades = 100;/*cantidad de ciudades para prueba*/
+const int cant_ciudades = 100;
 typedef tramo mapa[cant_ciudades];
 
 void Crear(mapa &m);//Crea un grafo vacío.
 
-//determina si un vertice existe en el grafo
-//bool PerteneceVertice(mapa m, int i);
-
 //determina si la arista pertenece al grafo
 bool PertenceArista(mapa m, int i, int j);
-
-//Inserta un nuevo vertice al grafo
-//PRECONDICION: el vertice no debe pertencer al grafo
-//void InsertarVertice(mapa &m, int v);
 
 //Inserta una nueva arista al grafo
 //PRECONDICION: la arista no debe pertenecer al grafo

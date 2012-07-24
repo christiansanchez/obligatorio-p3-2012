@@ -49,9 +49,6 @@ void buscarParejaNum(ciudades c, int num_c, bool &encontrado, pareja &p);
 
 pareja Find(ciudades c, int num_ciudad);
 
-//bool Member(ciudades c, int num_ciudad);
-
 bool Member(ciudades c, string nomb_ciudad);
-
 
 #endif // CIUDADES_H_INCLUDED

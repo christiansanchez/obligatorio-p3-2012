@@ -1,8 +1,5 @@
-#include "Tramo.h"
+#include "Mapa.h"
 #include <stdio.h>
-
-const int cant_ciudades = 100;/*cantidad de ciudades para prueba*/
-typedef tramo mapa[cant_ciudades];
 
 void Crear(mapa &m)
 {
@@ -11,21 +8,11 @@ void Crear(mapa &m)
         crearTramo(m[i]);
     }
 }
-/*
-bool PerteneceVertice(mapa m, int i)
-{
-
-}*/
 
 bool PertenceArista(mapa m, int i, int j)
 {
     return perteneceTramo(m[i],j);
 }
-
-/*void InsertarVertice(mapa &m, int v)
-{
-
-}*/
 
 void InsertarArista(mapa &m, int v1, int v2)
 {

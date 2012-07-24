@@ -11,7 +11,6 @@ int main()
     ciudades ciud;
     Make(ciud);
     Make(ls);
-    //cargo las ciudades primero
     cargarCiudades(ciud, map);
     do
     {

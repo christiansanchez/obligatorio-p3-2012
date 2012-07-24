@@ -6,8 +6,6 @@ typedef struct{	int num_parada;
               } parada;
 
 void cargarParada(parada &p, int numero, int num_ciudad);
-//void borrarParada(parada &p);
-//void mostrarParada(parada p);
 int darNum_parada(parada p);
 int darNum_Ciudad_Parada(parada p);
 

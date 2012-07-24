@@ -72,4 +72,3 @@ int largoTramo(tramo t)
         return 1 + largoTramo(t->sig);
     }
 }
-

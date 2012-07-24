@@ -1,91 +1,67 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <CodeBlocks_layout_file>
 	<ActiveTarget name="Debug" />
-	<File name="Ciudades.cpp" open="0" top="0" tabpos="5">
-		<Cursor position="2214" topLine="104" />
+	<File name="Ciudades.cpp" open="0" top="0" tabpos="6">
+		<Cursor position="519" topLine="135" />
 	</File>
 	<File name="Ciudades.h" open="0" top="0" tabpos="0">
-		<Cursor position="1553" topLine="38" />
+		<Cursor position="1544" topLine="0" />
 	</File>
-	<File name="Linea.cpp" open="1" top="1" tabpos="7">
-		<Cursor position="276" topLine="0" />
+	<File name="Linea.cpp" open="1" top="0" tabpos="2">
+		<Cursor position="2866" topLine="103" />
 	</File>
-	<File name="Linea.h" open="1" top="0" tabpos="4">
-		<Cursor position="289" topLine="0" />
+	<File name="Linea.h" open="1" top="0" tabpos="5">
+		<Cursor position="367" topLine="5" />
 	</File>
-	<File name="Lineas.cpp" open="0" top="0" tabpos="2">
-		<Cursor position="1895" topLine="92" />
+	<File name="Lineas.cpp" open="1" top="0" tabpos="4">
+		<Cursor position="1826" topLine="113" />
 	</File>
-	<File name="Lineas.h" open="1" top="0" tabpos="6">
-		<Cursor position="433" topLine="12" />
+	<File name="Lineas.h" open="0" top="0" tabpos="6">
+		<Cursor position="182" topLine="35" />
 	</File>
-	<File name="Mapa.cpp" open="0" top="0" tabpos="0">
-		<Cursor position="204" topLine="0" />
+	<File name="Mapa.cpp" open="1" top="0" tabpos="6">
+		<Cursor position="236" topLine="39" />
 	</File>
-	<File name="Mapa.h" open="0" top="0" tabpos="0">
-		<Cursor position="652" topLine="12" />
+	<File name="Mapa.h" open="1" top="1" tabpos="7">
+		<Cursor position="121" topLine="0" />
 	</File>
 	<File name="Menu.cpp" open="1" top="0" tabpos="1">
-		<Cursor position="8430" topLine="238" />
+		<Cursor position="11946" topLine="330" />
 	</File>
-	<File name="Menu.h" open="1" top="0" tabpos="2">
-		<Cursor position="645" topLine="12" />
+	<File name="Menu.h" open="0" top="0" tabpos="2">
+		<Cursor position="484" topLine="12" />
+	</File>
+	<File name="Parada.cpp" open="0" top="0" tabpos="0">
+		<Cursor position="243" topLine="0" />
 	</File>
 	<File name="Parada.h" open="0" top="0" tabpos="0">
-		<Cursor position="298" topLine="0" />
-	</File>
-	<File name="Pareja.cpp" open="0" top="0" tabpos="4">
-		<Cursor position="316" topLine="0" />
-	</File>
-	<File name="Pareja.h" open="0" top="0" tabpos="0">
-		<Cursor position="197" topLine="11" />
-	</File>
-	<File name="Recorrido.cpp" open="0" top="0" tabpos="2">
-		<Cursor position="642" topLine="0" />
-	</File>
-	<File name="Recorrido.h" open="1" top="0" tabpos="5">
-		<Cursor position="405" topLine="3" />
-	</File>
-	<File name="String.cpp" open="0" top="0" tabpos="0">
-		<Cursor position="2709" topLine="142" />
-	</File>
-	<File name="String.h" open="0" top="0" tabpos="0">
-		<Cursor position="493" topLine="0" />
-	</File>
-	<File name="Tramo.cpp" open="0" top="0" tabpos="0">
-		<Cursor position="1094" topLine="56" />
-	</File>
-	<File name="Tramo.h" open="0" top="0" tabpos="0">
 		<Cursor position="213" topLine="0" />
 	</File>
-	<File name="main.cpp" open="1" top="0" tabpos="3">
-		<Cursor position="884" topLine="36" />
+	<File name="Pareja.cpp" open="0" top="0" tabpos="5">
+		<Cursor position="1477" topLine="53" />
 	</File>
-	<File name="prueba_ciudades.cpp" open="0" top="0" tabpos="6">
-		<Cursor position="233" topLine="3" />
+	<File name="Pareja.h" open="0" top="0" tabpos="0">
+		<Cursor position="537" topLine="15" />
 	</File>
-	<File name="prueba_linea.cpp" open="0" top="0" tabpos="7">
-		<Cursor position="330" topLine="19" />
+	<File name="Recorrido.cpp" open="1" top="0" tabpos="3">
+		<Cursor position="1798" topLine="64" />
 	</File>
-	<File name="prueba_lineas.cpp" open="0" top="0" tabpos="3">
-		<Cursor position="217" topLine="2" />
+	<File name="Recorrido.h" open="0" top="0" tabpos="5">
+		<Cursor position="910" topLine="6" />
 	</File>
-	<File name="prueba_mapa.cpp" open="0" top="0" tabpos="0">
-		<Cursor position="61" topLine="0" />
+	<File name="String.cpp" open="0" top="0" tabpos="0">
+		<Cursor position="2615" topLine="111" />
 	</File>
-	<File name="prueba_parada.cpp" open="0" top="0" tabpos="0">
-		<Cursor position="303" topLine="0" />
+	<File name="String.h" open="0" top="0" tabpos="0">
+		<Cursor position="439" topLine="9" />
 	</File>
-	<File name="prueba_pareja.cpp" open="0" top="0" tabpos="0">
-		<Cursor position="184" topLine="3" />
+	<File name="Tramo.cpp" open="0" top="0" tabpos="0">
+		<Cursor position="1090" topLine="0" />
 	</File>
-	<File name="prueba_recorrido.cpp" open="0" top="0" tabpos="4">
-		<Cursor position="220" topLine="2" />
+	<File name="Tramo.h" open="0" top="0" tabpos="0">
+		<Cursor position="449" topLine="17" />
 	</File>
-	<File name="prueba_string.cpp" open="0" top="0" tabpos="0">
-		<Cursor position="43" topLine="0" />
-	</File>
-	<File name="prueba_tramo.cpp" open="0" top="0" tabpos="0">
-		<Cursor position="62" topLine="0" />
+	<File name="main.cpp" open="0" top="0" tabpos="3">
+		<Cursor position="579" topLine="37" />
 	</File>
 </CodeBlocks_layout_file>
