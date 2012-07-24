@@ -31,23 +31,11 @@ ciudades crearCiudadesAtomica(pareja p)
     ciudades c;
     c = new nodoCiudades;
     c -> info_pareja = p;
-    c -> Hder = NULL;
     c -> Hizq = NULL;
+    c -> Hder = NULL;
     return c;
 }
-/*
-bool Member(ciudades c, int num_ciudad)
-{
-    if (c==NULL)
-        return false;
-    else if(darNumCiudad(c->info_pareja) == num_ciudad)
-        return true;
-    else if(darNumCiudad(c->info_pareja) < num_ciudad)
-        return Member(c->Hder,num_ciudad);
-    else
-        return Member(c->Hizq,num_ciudad);
-}
-*/
+
 bool Member(ciudades c, string nomb_ciudad)
 {
     if (c==NULL)
@@ -83,7 +71,6 @@ bool Member(ciudades c, pareja p)
                 return Member(ciudadesDer(c),p);
             }
         }
-
     }
 }
 
@@ -110,9 +97,9 @@ void desplegarCiudades(ciudades c)
 {
     if(!esVacioCiudades(c))
     {
-        desplegarCiudades(ciudadesIzq(c));
+        desplegarCiudades(c->Hizq);
         desplegarPareja(darInfoPareja(c));
-        desplegarCiudades(ciudadesDer(c));
+        desplegarCiudades(c->Hder);
     }
 }
 

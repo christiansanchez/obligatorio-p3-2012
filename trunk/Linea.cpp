@@ -1,19 +1,57 @@
 #include "Linea.h"
 #include <stdio.h>
-
-void cargarLinea(linea &l, recorrido r)
+#include<conio.h>
+void cargarLinea(linea &l, ciudades ciud, string codigo, bool &ok)
 {
-    printf("\nIngrese codigo de la linea: ");
+    string nomb1;
+    string nomb2;
+    pareja p;
+    parada parad;
+    strcrear(nomb1);
+    strcrear(nomb2);
     fflush(stdin);
     strcrear(l.codigo);
-    scan(l.codigo);
+    strcop(l.codigo,codigo);
     fflush(stdin);
-    printf("Ingrese el numero de la ciudad de origen: ");
-    scanf("%d",&l.num_origen);
-    fflush(stdin);
-    printf("Ingrese el numero de la ciudad de destino: ");
-    scanf("%d",&l.num_destino);
-    l.linea_recorrido = r;
+    printf("\nIngrese el nombre de la ciudad de origen: ");
+    scan(nomb1);
+    if(Member(ciud, nomb1))
+    {
+        p = Find(ciud, nomb1);
+        l.num_origen = darNumCiudad(p);
+        fflush(stdin);
+        printf("\nIngrese el nombre de la ciudad de destino: ");
+        scan(nomb2);
+        if(Member(ciud, nomb2))
+        {
+            p = Find(ciud, nomb2);
+            l.num_destino = darNumCiudad(p);
+            Crear(l.linea_recorrido);
+            cargarParada(parad, 1 , l.num_origen);
+            InsBack(l.linea_recorrido, parad);
+            cargarParada(parad, 2 , l.num_destino);
+            InsBack(l.linea_recorrido, parad);
+            ok = true;
+        }
+        else
+        {
+            printf("\nNo se encuentra ingresada en nuestro sistema la ciudad ");
+            print(nomb2);
+            printf(".\n");
+            ok = false;
+            printf ("\n\n\tPresione enter para continuar.");
+            getch();
+        }
+    }
+    else
+    {
+        printf("\nNo se encuentra ingresada en nuestro sistema la ciudad ");
+        print(nomb1);
+        printf(".\n");
+        ok = false;
+        printf ("\n\n\tPresione enter para continuar.");
+        getch();
+    }
 }
 
 void darCodigo(linea l, string &codigo)
@@ -75,13 +113,36 @@ void desplegarDatosBasicos(linea l, ciudades c)
     strcrear(c_origen);
     strcrear(c_destino);
     darCodigo(l,codigo);
-    printf("\nCODIGO DE LINEA: ");
+    printf("\n\tLINEA: ");
     print(codigo);
     darNombreCiudad(Find(c, darNumOrigen(l)), c_origen);
-    printf("\nCIUDAD DE ORIGEN: ");
+    printf(" - ORIGEN: ");
     print(c_origen);
     darNombreCiudad(Find(c, darNumDestino(l)), c_destino);
-    printf("\nCIUDAD DE DESTINO: ");
+    printf(" - DESTINO: ");
     print(c_destino);
-    printf("\nCANTIDAD DE PARADAS: %d",Largo(darLineRecorrido(l)));
+    printf(" - CANTIDAD DE PARADAS: %d\n",Largo(darLineRecorrido(l)));
+}
+
+void desplegarParadas(linea l, ciudades c)
+{
+    recorrido r;
+    r = darLineRecorrido(l);
+    ListarRecorrido(r, c);
+}
+
+void cambiarCiduadDestino(linea &l, int new_num_dest)
+{
+    l.num_destino = new_num_dest;
+}
+
+void agregarParada(linea &l,int new_num_dest)
+{
+    parada p;
+    recorrido r = darLineRecorrido(l);
+    int new_num_parada = darNum_parada(Ultimo(r)) + 1;
+    cambiarCiduadDestino(l, new_num_dest);
+    cargarParada(p, new_num_parada , new_num_dest);
+    InsBack(r, p);
+    l.linea_recorrido = r;
 }

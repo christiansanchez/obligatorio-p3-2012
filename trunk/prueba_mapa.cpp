@@ -1,10 +1,10 @@
 #include "Mapa.h"
 #include <stdio.h>
-
+/*
 int main_ya_probado9()
 {
     mapa m;
-    Crear(m);
+//    Crear(m);
     if(PertenceArista(m, 0, 1))
     {
         printf("\n\nLa arista 0-1 pertenece al mapa");
@@ -42,3 +42,4 @@ int main_ya_probado9()
     printf("\n\nLas ciudades adyacentes al vertice 1 son:");
     listarCiudadesAdyacentes(m,1);
 }
+*/

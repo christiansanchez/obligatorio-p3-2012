@@ -47,6 +47,9 @@ lineas lineasIzq(lineas l);
 lineas lineasDer(lineas l);
 
 //muestro todas las lineas
-//void desplegarLineas(lineas ls, ciudades c);
+void desplegarLineas(lineas ls, ciudades c);
+
+//sustituye la linea vieja por la nueva
+void Modify(lineas &ls, linea l);
 
 #endif // LINEAS_H_INCLUDED

@@ -18,6 +18,7 @@ int darNumCiudad(pareja p)
 
 void darNombreCiudad(pareja p, string &nombreCiudad)
 {
+    strcrear(nombreCiudad);
     strcop(nombreCiudad, p.nombre_ciudad);
 }
 
@@ -36,6 +37,8 @@ bool igualesPareja(pareja p1, pareja p2)
 {
     string nomb_ciudad1;
     string nomb_ciudad2;
+    strcrear(nomb_ciudad1);
+    strcrear(nomb_ciudad2);
     darNombreCiudad(p1, nomb_ciudad1);
     darNombreCiudad(p2, nomb_ciudad2);
     return streq(nomb_ciudad1, nomb_ciudad2);
@@ -45,6 +48,8 @@ bool mayorPareja(pareja p1, pareja p2)
 {
     string nomb_ciudad1;
     string nomb_ciudad2;
+    strcrear(nomb_ciudad1);
+    strcrear(nomb_ciudad2);
     darNombreCiudad(p1, nomb_ciudad1);
     darNombreCiudad(p2, nomb_ciudad2);
     return strmen(nomb_ciudad2, nomb_ciudad1);
@@ -53,6 +58,7 @@ bool mayorPareja(pareja p1, pareja p2)
 bool igualNombreCiudad(pareja p, string c)
 {
     string aux;
+    strcrear(aux);
     darNombreCiudad(p, aux);
     return streq(aux, c);
 }
@@ -60,6 +66,7 @@ bool igualNombreCiudad(pareja p, string c)
 bool mayorNombreCiudad(pareja p, string c)
 {
     string aux;
+    strcrear(aux);
     darNombreCiudad(p, aux);
     return strmen(c, aux);
 }

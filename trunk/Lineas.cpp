@@ -99,7 +99,7 @@ bool Member(lineas ls, string codigo)
         }
     }
 }
-/*
+
 void desplegarLineas(lineas ls, ciudades c)
 {
     if(ls!=NULL)
@@ -108,4 +108,26 @@ void desplegarLineas(lineas ls, ciudades c)
         desplegarDatosBasicos(darLinea(ls),c);
         desplegarLineas(ls->Hder, c);
     }
-}*/
+}
+
+void Modify(lineas &ls, linea l)
+{
+    string cod;
+    strcrear(cod);
+    darCodigo(l,cod);
+    if(igualesLineaCodigo(darLinea(ls),cod))
+    {
+        ls->info_linea = l;
+    }
+    else
+    {
+        if(mayorLineaCodigo(darLinea(ls), cod))
+        {
+            Modify(ls->Hizq, l);
+        }
+        else
+        {
+            Modify(ls->Hder, l);
+        }
+    }
+}

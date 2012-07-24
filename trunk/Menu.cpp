@@ -1,11 +1,7 @@
 #include "Menu.h"
 #include <stdio.h>
-//#include <conio.h>
-//#include <iostream>
-//#include<conio.h>
-//#include <iostream>
-//#include <stdio.h>
 #include <stdlib.h>
+#include<conio.h>
 
 void menu(int &op_elegida)
 {
@@ -22,7 +18,6 @@ void menu(int &op_elegida)
     scanf("%d",&op_elegida);
 }
 
-
 void despedida(int op)
 {
     system("cls");
@@ -33,9 +28,10 @@ void cargarCiudades(ciudades &c, mapa &map)
 {
     char op;
     pareja p;
-    int cont = 1;
+    int cont = 0;
+    bool continuar = true;
+    bool op2 = true;
     Crear(map);
-    bool continuar, op2 = true;
     do
     {
         printf("\t\t\t##### INGRESAR CIUDADES #####\n\n");
@@ -73,7 +69,17 @@ void cargarCiudades(ciudades &c, mapa &map)
         {
             continuar = false;
         }
-    }while(continuar);
+        else
+        {
+            if(cont==cant_ciudades)
+            {
+                printf("\t\t\t##### INGRESAR CIUDADES #####\n\n");
+                printf("\n\tSe alcanzo el maximo de ciudades permitidas");
+                printf ("\n\n\tPresione enter para continuar.");
+                getch();
+            }
+        }
+    }while(continuar&&(cont<cant_ciudades));
 }
 
 void opcion_uno(mapa &map, ciudades ciud)
@@ -90,22 +96,17 @@ void opcion_uno(mapa &map, ciudades ciud)
         printf("Ingrese el nombre de la primera ciudad: ");
         fflush(stdin);
         scan(ciudad1);
-        //consulto si la ciudad1 esta ingresada en el sistema
         if(Member(ciud, ciudad1))
         {
             printf("\n\nIngrese el nombre de la segunda ciudad: ");
             fflush(stdin);
             scan(ciudad2);
-            //obtengo el numero correspondiente al nombre de la ciudad1
             p = Find(ciud, ciudad1);
             n_ciudad1 = darNumCiudad(p);
-            //consulto si la ciudad2 esta ingresada en el sistema
             if(Member(ciud, ciudad2))
             {
-                //obtengo el numero correspondiente al nombre de la ciudad2
                 p = Find(ciud, ciudad2);
                 n_ciudad2 = darNumCiudad(p);
-                //consulto si ya no hay un tramo entre ellos ingresado
                 if(PertenceArista(map, n_ciudad1, n_ciudad2))
                 {
                     system("cls");
@@ -119,7 +120,6 @@ void opcion_uno(mapa &map, ciudades ciud)
                 {
                     system("cls");
                     printf("\t\t\t##### INGRESAR TRAMO ENTRE CIUDADES #####\n\n");
-                    //ingreso el tramo al mapa
                     InsertarArista(map, n_ciudad1, n_ciudad2);
                     printf("\n\tEl tramo entre ");
                     print(ciudad1);
@@ -172,22 +172,17 @@ void opcion_dos(mapa map, ciudades ciud)
         printf("Ingrese el nombre de la primera ciudad: ");
         fflush(stdin);
         scan(ciudad1);
-        //consulto si la ciudad1 esta ingresada en el sistema
         if(Member(ciud, ciudad1))
         {
             printf("\n\nIngrese el nombre de la segunda ciudad: ");
             fflush(stdin);
             scan(ciudad2);
-            //obtengo el numero correspondiente al nombre de la ciudad1
             p = Find(ciud, ciudad1);
             n_ciudad1 = darNumCiudad(p);
-            //consulto si la ciudad2 esta ingresada en el sistema
             if(Member(ciud, ciudad2))
             {
-                //obtengo el numero correspondiente al nombre de la ciudad2
                 p = Find(ciud, ciudad2);
                 n_ciudad2 = darNumCiudad(p);
-                //consulto si ya no hay un tramo entre ellos ingresado
                 if(PertenceArista(map, n_ciudad1, n_ciudad2))
                 {
                     system("cls");
@@ -240,19 +235,42 @@ void opcion_dos(mapa map, ciudades ciud)
 void opcion_tres(mapa map, ciudades ciud, lineas &ls)
 {
     string codigo;
+    linea l;
     int op;
+    bool ok = true;
     do
     {
         system("cls");
         printf("\t\t\t##### INGRESAR NUEVA LINEA A LA EMPRESA #####\n\n");
         strcrear(codigo);
-        printf("\nIngrese el codigo de la nueva linea que sera ingresada al sistema: ");
+        printf("\nIngrese el codigo de la nueva linea que desea ingresada al sistema: ");
         fflush(stdin);
         scan(codigo);
         if(!Member(ls,codigo))
         {
-            //seguir ak
-            printf("\n\n En construccion");
+            cargarLinea(l, ciud, codigo, ok);
+            if(ok)
+            {
+                if(PertenceArista(map, darNumDestino(l), darNumOrigen(l)))
+                {
+                        Insert(ls, l);
+                        system("cls");
+                        printf("\t\t\t##### INGRESAR NUEVA LINEA A LA EMPRESA #####\n\n");
+                        printf("\n\tSe ingreso correctamente la nueva linea al sistema.");
+                }
+                else
+                {
+                    system("cls");
+                    printf("\t\t\t##### INGRESAR NUEVA LINEA A LA EMPRESA #####\n\n");
+                    printf("\n\tNo existe un tramo que una dichas ciudades.");
+                }
+            }
+            else
+            {
+                system("cls");
+                printf("\t\t\t##### INGRESAR NUEVA LINEA A LA EMPRESA #####\n\n");
+                printf("\n\tNo se pudo ingresar la nueva linea al sistema.");
+            }
         }
         else
         {
@@ -274,21 +292,41 @@ void opcion_tres(mapa map, ciudades ciud, lineas &ls)
                 printf("\n\n\tOpcion seleccionada: ");
                 scanf("%d",&op);
         }
-
     }while(op!=2);
 
 }
 
 void opcion_cuatro(ciudades ciud, lineas ls)
 {
-    system("cls");
-    printf("\n\n\nEn construccion");
+    int op;
+    do
+    {
+        system("cls");
+        printf("\t##### LISTADO DE TODAS LAS LINEAS DE LA EMPRESA EN EL SISTEMA #####\n\n");
+        desplegarLineas(ls, ciud);
+        printf("\n\n\n\t1 - Listar nuevamente todas las lineas.");
+        printf("\n\n\t2 - Volver a menu principal.");
+        printf("\n\n\tOpcion seleccionada: ");
+        scanf("%d",&op);
+        while(op>2||op<1)
+        {
+                system("cls");
+                printf("\t##### LISTADO DE TODAS LAS LINEAS DE LA EMPRESA EN EL SISTEMA #####\n\n");
+                printf("\nLa opcion elegida es incorrecta. Intentelo nuevamente");
+                printf("\n\n\n\t1 - Listar nuevamente todas las lineas.");
+                printf("\n\n\t2 - Volver a menu principal.");
+                printf("\n\n\tOpcion seleccionada: ");
+                scanf("%d",&op);
+        }
+    }while(op!=2);
 }
 
 void opcion_cinco(mapa map, ciudades ciud, lineas &ls)
 {
-    string codigo;
-    int op;
+    string codigo, nomb_parada, nomb_dest;
+    pareja p;
+    linea l;
+    int op, num_c_parada, num_dest;
     do
     {
         system("cls");
@@ -299,8 +337,44 @@ void opcion_cinco(mapa map, ciudades ciud, lineas &ls)
         scan(codigo);
         if(Member(ls,codigo))
         {
-            //seguir ak
-            printf("\n\n En construccion");
+            strcrear(nomb_parada);
+            printf("\nIngrese el nombre de la nueva parada a ingresar: ");
+            fflush(stdin);
+            scan(nomb_parada);
+            if(Member(ciud, nomb_parada))
+            {
+                p = Find(ciud, nomb_parada);
+                num_c_parada = darNumCiudad(p);
+                l = Find(ls, codigo);
+                num_dest = darNumDestino(l);
+                if(PertenceArista(map, num_c_parada, num_dest))
+                {
+                    agregarParada(l, num_c_parada);
+                    Modify(ls,l);
+                    printf("\nSe ingreso correctamente la nueva parada ");
+                    print(nomb_parada);
+                    printf(" a la linea ");
+                    print(codigo);
+                    printf(".");
+                }
+                else
+                {
+                    printf("\nNo existe un tramo que una la ciudad de ");
+                    print(nomb_parada);
+                    printf( " con ");
+                    p = Find(ciud, num_dest);
+                    strcrear(nomb_dest);
+                    darNombreCiudad(p, nomb_dest);
+                    print(nomb_dest);
+                    printf(".");
+                }
+            }
+            else
+            {
+                printf("\nLa ciudad ");
+                print(nomb_parada);
+                printf(" no se encuentra ingresada en nuestro sistema.");
+            }
         }
         else
         {
@@ -328,8 +402,48 @@ void opcion_cinco(mapa map, ciudades ciud, lineas &ls)
 
 void opcion_seis(ciudades ciud, lineas ls)
 {
-    system("cls");
-    printf("\n\n\nEn construccion");
+    string codigo;
+    strcrear(codigo);
+    linea l;
+    int op;
+    do
+    {
+        system("cls");
+        printf("\t##### LISTADO DE PARADAS CORRESPONDIENTE A UNA LINEA #####\n\n");
+        printf("\nIngrese el codigo de la linea que desea listar: ");
+        fflush(stdin);
+        scan(codigo);
+        if(Member(ls, codigo))
+        {
+            l =  Find(ls, codigo);
+            system("cls");
+            printf("\t##### LISTADO DE PARADAS CORRESPONDIENTE A UNA LINEA #####\n\n");
+            printf("\n\t***** Listado de paradas correspondientes a la linea ");
+            print(codigo);
+            printf(" *****\n");
+            desplegarParadas(l, ciud);
+        }
+        else
+        {
+            printf("\n\tEl codigo ");
+            print(codigo);
+            printf(" no pertenece a ninguna linea ingresada en el sistema.");
+        }
+        printf("\n\n\n\t1 - Listar nuevamente paradas de una linea.");
+        printf("\n\n\t2 - Volver a menu principal.");
+        printf("\n\n\tOpcion seleccionada: ");
+        scanf("%d",&op);
+        while(op>2||op<1)
+        {
+                system("cls");
+                printf("\t##### LISTADO DE PARADAS CORRESPONDIENTE A UNA LINEA #####\n\n");
+                printf("\nLa opcion elegida es incorrecta. Intentelo nuevamente");
+                printf("\n\n\n\t1 - Listar nuevamente paradas de una linea.");
+                printf("\n\n\t2 - Volver a menu principal.");
+                printf("\n\n\tOpcion seleccionada: ");
+                scanf("%d",&op);
+        }
+    }while(op!=2);
 }
 
 

@@ -90,19 +90,16 @@ void ListarRecorrido(recorrido r,ciudades ciu)
 	nodoR * aux = r.prim;
 	while (aux->sig !=NULL)
 	{
-	    printf("\nPARADA: %d",darNum_parada(aux->info_parada));
+	    printf("\n\tPARADA: %d",darNum_parada(aux->info_parada));
 		numciu = darNum_Ciudad_Parada(aux->info_parada);
 		darNombreCiudad(Find(ciu, numciu), nombre);
-		printf("\nCIUDAD: ");
+		printf(" - CIUDAD: ");
 		print(nombre);
-		printf("\n---------------");
 		aux = aux->sig;
 	}
-	printf("\nPARADA: %d",darNum_parada(aux->info_parada));
+	printf("\n\tPARADA: %d",darNum_parada(aux->info_parada));
 	numciu=darNum_Ciudad_Parada(aux->info_parada);
-	//printf("\nnumero ciudad: %d\n",numciu);
     darNombreCiudad(Find(ciu, numciu),nombre);
-	printf("\nCIUDAD: ");
+	printf(" - CIUDAD: ");
 	print(nombre);
-	printf("\n= = = = = = = = = = :FIN DEL RECORRIDO");
 }
