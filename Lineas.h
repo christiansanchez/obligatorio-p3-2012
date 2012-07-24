@@ -1,6 +1,5 @@
 #ifndef LINEAS_H_INCLUDED
 #define LINEAS_H_INCLUDED
-#include "String.h"
 #include "Linea.h"
 
 typedef struct nodoLS {

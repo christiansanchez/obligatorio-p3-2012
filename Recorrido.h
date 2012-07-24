@@ -2,7 +2,6 @@
 #define RECORRIDO_H_INCLUDED
 #include "Parada.h"
 #include "Ciudades.h"
-#include "String.h"
 typedef struct nodoL {
                         parada info_parada;
                         nodoL * sig;

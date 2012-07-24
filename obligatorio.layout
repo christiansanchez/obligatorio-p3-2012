@@ -5,63 +5,63 @@
 		<Cursor position="519" topLine="135" />
 	</File>
 	<File name="Ciudades.h" open="0" top="0" tabpos="0">
-		<Cursor position="1544" topLine="0" />
+		<Cursor position="164" topLine="0" />
 	</File>
-	<File name="Linea.cpp" open="1" top="0" tabpos="2">
+	<File name="Linea.cpp" open="0" top="0" tabpos="2">
 		<Cursor position="2866" topLine="103" />
 	</File>
-	<File name="Linea.h" open="1" top="0" tabpos="5">
-		<Cursor position="367" topLine="5" />
+	<File name="Linea.h" open="0" top="0" tabpos="5">
+		<Cursor position="74" topLine="0" />
 	</File>
-	<File name="Lineas.cpp" open="1" top="0" tabpos="4">
+	<File name="Lineas.cpp" open="0" top="0" tabpos="4">
 		<Cursor position="1826" topLine="113" />
 	</File>
-	<File name="Lineas.h" open="0" top="0" tabpos="6">
-		<Cursor position="182" topLine="35" />
+	<File name="Lineas.h" open="1" top="0" tabpos="2">
+		<Cursor position="52" topLine="0" />
 	</File>
-	<File name="Mapa.cpp" open="1" top="0" tabpos="6">
+	<File name="Mapa.cpp" open="0" top="0" tabpos="6">
 		<Cursor position="236" topLine="39" />
 	</File>
-	<File name="Mapa.h" open="1" top="1" tabpos="7">
+	<File name="Mapa.h" open="0" top="0" tabpos="7">
 		<Cursor position="121" topLine="0" />
 	</File>
-	<File name="Menu.cpp" open="1" top="0" tabpos="1">
+	<File name="Menu.cpp" open="0" top="0" tabpos="1">
 		<Cursor position="11946" topLine="330" />
 	</File>
 	<File name="Menu.h" open="0" top="0" tabpos="2">
-		<Cursor position="484" topLine="12" />
+		<Cursor position="48" topLine="0" />
 	</File>
 	<File name="Parada.cpp" open="0" top="0" tabpos="0">
 		<Cursor position="243" topLine="0" />
 	</File>
-	<File name="Parada.h" open="0" top="0" tabpos="0">
-		<Cursor position="213" topLine="0" />
+	<File name="Parada.h" open="1" top="0" tabpos="3">
+		<Cursor position="54" topLine="0" />
 	</File>
 	<File name="Pareja.cpp" open="0" top="0" tabpos="5">
 		<Cursor position="1477" topLine="53" />
 	</File>
-	<File name="Pareja.h" open="0" top="0" tabpos="0">
-		<Cursor position="537" topLine="15" />
+	<File name="Pareja.h" open="1" top="0" tabpos="4">
+		<Cursor position="537" topLine="0" />
 	</File>
-	<File name="Recorrido.cpp" open="1" top="0" tabpos="3">
+	<File name="Recorrido.cpp" open="0" top="0" tabpos="3">
 		<Cursor position="1798" topLine="64" />
 	</File>
-	<File name="Recorrido.h" open="0" top="0" tabpos="5">
-		<Cursor position="910" topLine="6" />
+	<File name="Recorrido.h" open="1" top="0" tabpos="1">
+		<Cursor position="102" topLine="0" />
 	</File>
 	<File name="String.cpp" open="0" top="0" tabpos="0">
 		<Cursor position="2615" topLine="111" />
 	</File>
 	<File name="String.h" open="0" top="0" tabpos="0">
-		<Cursor position="439" topLine="9" />
+		<Cursor position="439" topLine="0" />
 	</File>
 	<File name="Tramo.cpp" open="0" top="0" tabpos="0">
 		<Cursor position="1090" topLine="0" />
 	</File>
-	<File name="Tramo.h" open="0" top="0" tabpos="0">
-		<Cursor position="449" topLine="17" />
+	<File name="Tramo.h" open="1" top="0" tabpos="5">
+		<Cursor position="449" topLine="0" />
 	</File>
-	<File name="main.cpp" open="0" top="0" tabpos="3">
-		<Cursor position="579" topLine="37" />
+	<File name="main.cpp" open="1" top="1" tabpos="6">
+		<Cursor position="105" topLine="0" />
 	</File>
 </CodeBlocks_layout_file>

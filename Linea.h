@@ -1,7 +1,6 @@
 #ifndef LINEA_H_INCLUDED
 #define LINEA_H_INCLUDED
 #include "Recorrido.h"
-#include "String.h"
 typedef struct{
 	string codigo;
 	int num_origen;
